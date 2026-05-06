@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="511" height="362" font-family="-apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif">
+  <!-- Title bar -->
+  <rect x="0" y="0" width="511" height="28" fill="#e8e8e8" stroke="#b0b0b0"/>
+  <circle cx="14" cy="14" r="6" fill="#ff5f57" stroke="#b0b0b0" stroke-width="0.5"/>
+  <circle cx="34" cy="14" r="6" fill="#febc2e" stroke="#b0b0b0" stroke-width="0.5"/>
+  <circle cx="54" cy="14" r="6" fill="#28c840" stroke="#b0b0b0" stroke-width="0.5"/>
+  <text x="255" y="18" font-size="13" fill="#333" text-anchor="middle">Proxy Audio Device Settings</text>
+
+  <!-- Content area (Cocoa y-origin is bottom-left; translated to SVG) -->
+  <g transform="translate(0, 28)">
+    <rect x="0" y="0" width="511" height="334" fill="#ececec"/>
+
+    <!-- Row 1: Proxy device name -->
+    <text x="152" y="35" font-size="13" fill="#000" text-anchor="end">Proxy device name:</text>
+    <rect x="158" y="20" width="333" height="22" fill="#ffffff" stroke="#a0a0a0"/>
+    <text x="164" y="35" font-size="13" fill="#000">Proxy Audio Device</text>
+
+    <!-- Row 2: Proxied device -->
+    <text x="152" y="66" font-size="13" fill="#000" text-anchor="end">Proxied device:</text>
+    <rect x="158" y="51" width="336" height="26" fill="#ffffff" stroke="#a0a0a0"/>
+    <text x="164" y="68" font-size="13" fill="#000">MacBook Pro Speakers</text>
+    <polygon points="480,60 490,60 485,69" fill="#808080"/>
+
+    <!-- Row 3: Buffer size -->
+    <text x="152" y="98" font-size="13" fill="#000" text-anchor="end">Buffer size:</text>
+    <rect x="158" y="83" width="203" height="26" fill="#ffffff" stroke="#a0a0a0"/>
+    <text x="164" y="100" font-size="13" fill="#000">512</text>
+    <polygon points="348,92 358,92 353,101" fill="#808080"/>
+
+    <!-- Row 4: Proxy device is active: (label + radios) -->
+    <text x="152" y="130" font-size="13" fill="#000" text-anchor="end">Proxy device is active:</text>
+
+    <!-- Radio 1: proxied device is active (unselected) -->
+    <circle cx="164" cy="127" r="6" fill="#ffffff" stroke="#808080"/>
+    <text x="177" y="131" font-size="13" fill="#000">When proxied device is active</text>
+    <text x="176" y="151" font-size="11" fill="#666">Uses the least amount of CPU and battery power, but audio</text>
+    <text x="176" y="163" font-size="11" fill="#666">will occasionally get cut off as it starts playing</text>
+
+    <!-- Radio 2: user is not idle (selected — default) -->
+    <circle cx="164" cy="181" r="6" fill="#ffffff" stroke="#0a64d9"/>
+    <circle cx="164" cy="181" r="3" fill="#0a64d9"/>
+    <text x="177" y="185" font-size="13" fill="#000">When user is not idle</text>
+    <text x="176" y="205" font-size="11" fill="#666">Uses more CPU and battery power, but audio can only get cut</text>
+    <text x="176" y="217" font-size="11" fill="#666">off if it starts playing while the system is idle</text>
+
+    <!-- Radio 3: always (unselected) -->
+    <circle cx="164" cy="235" r="6" fill="#ffffff" stroke="#808080"/>
+    <text x="177" y="239" font-size="13" fill="#000">Always</text>
+    <text x="176" y="259" font-size="11" fill="#666">Uses the most CPU and battery power, and prevents the</text>
+    <text x="176" y="271" font-size="11" fill="#666">system from sleeping. But audio will never be cut off.</text>
+
+    <!-- NEW checkbox: hide when unavailable (unchecked — default off) -->
+    <rect x="157" y="296" width="14" height="14" fill="#ffffff" stroke="#808080" rx="2"/>
+    <text x="177" y="308" font-size="13" fill="#000">Hide proxy device when target device is unavailable</text>
+
+    <!-- Annotation arrow pointing at new control -->
+    <rect x="8" y="288" width="140" height="32" fill="#fff3cd" stroke="#d4a017" rx="4"/>
+    <text x="78" y="301" font-size="10" fill="#806000" text-anchor="middle">NEW — default off,</text>
+    <text x="78" y="313" font-size="10" fill="#806000" text-anchor="middle">preserves existing behavior</text>
+    <line x1="148" y1="303" x2="156" y2="303" stroke="#d4a017" stroke-width="1.5"/>
+    <polygon points="156,303 152,300 152,306" fill="#d4a017"/>
+  </g>
+</svg>
