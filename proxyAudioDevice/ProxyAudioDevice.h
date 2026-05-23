@@ -73,6 +73,7 @@ class ProxyAudioDevice {
                             const AudioObjectPropertyAddress *inAddresses);
     void setupAudioDevicesListener();
     void setupTargetOutputDevice();
+    void scheduleTargetDeviceRetry(int generation);
     void initializeOutputDevice();
     void deinitializeOutputDeviceNoLock();
     void deinitializeOutputDevice();
@@ -511,6 +512,10 @@ class ProxyAudioDevice {
     UInt64 outputAccumulatedRateRatioSamples = 0;
     ActiveCondition outputDeviceActiveCondition = ActiveCondition::userActive;
     bool outputDeviceHideWhenUnavailable = kOutputDeviceDefaultHideWhenUnavailable;
+
+    // Bumped on every entry to setupTargetOutputDevice so any pending retry
+    // block from a prior failed setup will see a stale generation and bail out.
+    std::atomic<int> targetDeviceSearchGeneration{0};
     
     UInt32 gPlugIn_RefCount = 0;
     AudioServerPlugInHostRef gPlugIn_Host = NULL;
